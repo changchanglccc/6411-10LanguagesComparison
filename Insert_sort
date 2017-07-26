@@ -1,0 +1,28 @@
+# Insert sort in Ruby
+
+def insert_sort(mylist)
+  for i in 1...mylist.length
+    key = mylist[i]
+    j = i - 1
+    while j >= 0 and mylist[j] > key
+    mylist[j + 1] = mylist[j]
+    j = j - 1
+  end
+  mylist[j + 1] = key
+end
+#puts mylist
+end
+
+list = [7,8,5,2,4,6,3]
+start = Time.now
+insert_sort(list)
+# code to time
+finish = Time.now
+diff = finish - start
+
+puts "#{diff*1000}  ms."
+
+# Benchmark Time measure
+# require 'benchmark'   These two r used for Benchmark Time
+# require 'bigdecimal/math'
+# puts Benchmark.measure{BigMath.PI(10_000)}
